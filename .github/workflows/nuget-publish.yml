@@ -30,12 +30,10 @@ jobs:
         run: dotnet tool install -g dotnet-reportgenerator-globaltool
         
       - name: Generate Coverage Report
-        run: reportgenerator -reports:tests/SteamId.Net.Tests/coverage.info -targetdir:coveragereport -reporttypes:MarkdownSummaryGithub
+        run: reportgenerator -reports:tests/SteamId.Net.Tests/coverage.info -targetdir:coveragereport -reporttypes:MarkdownSummaryGithub;Badges
         
-      - name: Create README.md with coverage
+      - name: Append coverage to README
         run: |
-          echo "# SteamId.Net" > README.md
-          echo "" >> README.md
           echo "## Code Coverage" >> README.md
           cat coveragereport/SummaryGithub.md >> README.md
   
