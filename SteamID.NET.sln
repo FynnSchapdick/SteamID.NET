@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "source", "source", "{8E0E5563-B779-4B84-9505-99FC21EA3E84}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SteamId.Net", "source\SteamId.Net\SteamId.Net.csproj", "{16A8270E-E1D3-496E-9FAF-20045C6DF53B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "benchmarks", "benchmarks", "{1BB0514C-D06F-4F5F-B513-3A94A458EF1C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SteamId.Net.Benchmark", "benchmarks\SteamId.Net.Benchmark\SteamId.Net.Benchmark.csproj", "{71808E0E-E6B8-4F95-A0F5-0A0927E5990C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{351FE408-2231-4ADC-8609-049A39293930}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SteamId.Net.Tests", "tests\SteamId.Net.Tests\SteamId.Net.Tests.csproj", "{5328288A-40EE-4858-A6B8-084F267AB4D8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "config", "config", "{FE4F0A2A-D557-4088-BB6C-539D47D5EBE2}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{16A8270E-E1D3-496E-9FAF-20045C6DF53B} = {8E0E5563-B779-4B84-9505-99FC21EA3E84}
+		{71808E0E-E6B8-4F95-A0F5-0A0927E5990C} = {1BB0514C-D06F-4F5F-B513-3A94A458EF1C}
+		{5328288A-40EE-4858-A6B8-084F267AB4D8} = {351FE408-2231-4ADC-8609-049A39293930}
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{16A8270E-E1D3-496E-9FAF-20045C6DF53B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16A8270E-E1D3-496E-9FAF-20045C6DF53B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16A8270E-E1D3-496E-9FAF-20045C6DF53B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16A8270E-E1D3-496E-9FAF-20045C6DF53B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71808E0E-E6B8-4F95-A0F5-0A0927E5990C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71808E0E-E6B8-4F95-A0F5-0A0927E5990C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71808E0E-E6B8-4F95-A0F5-0A0927E5990C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71808E0E-E6B8-4F95-A0F5-0A0927E5990C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5328288A-40EE-4858-A6B8-084F267AB4D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5328288A-40EE-4858-A6B8-084F267AB4D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5328288A-40EE-4858-A6B8-084F267AB4D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5328288A-40EE-4858-A6B8-084F267AB4D8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
