@@ -27,7 +27,7 @@ jobs:
         run: mkdir -p TestResults
 
       - name: Test and Collect Coverage
-        run: dotnet test tests/SteamId.Net.Tests/SteamId.Net.Tests.csproj --no-build --configuration Release --verbosity normal /p:CollectCoverage=true /p:CoverletOutput=./TestResults/ /p:CoverletOutputFormat=lcov
+        run: dotnet test tests/SteamId.Net.Tests/SteamId.Net.Tests.csproj --no-build --configuration Release --verbosity normal /p:CollectCoverage=true /p:CoverletOutputFormat=lcov
 
       - name: List files in TestResults
         run: ls -al TestResults
@@ -36,7 +36,8 @@ jobs:
         run: dotnet tool install -g dotnet-reportgenerator-globaltool
         
       - name: Generate Coverage Report
-        run: reportgenerator -reports:TestResults/coverage.info -targetdir:coveragereport -reporttypes:MarkdownSummaryGithub
+        run: reportgenerator -reports:tests/SteamId.Net.Tests/TestResults/coverage.info -targetdir:coveragereport -reporttypes:MarkdownSummaryGithub
+
 
 
   benchmark:
