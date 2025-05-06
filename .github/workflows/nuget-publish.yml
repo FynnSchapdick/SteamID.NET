@@ -68,7 +68,7 @@ jobs:
         run: |
           # Hier wird die generierte Markdown-Datei zu deinem README hinzugefügt
           echo "### Benchmark Results" >> README.md
-          cat bin/Release/net6.0/BenchmarkDotNet.Artifacts/results/benchmark-results.md >> README.md
+          cat bin/Release/net9.0/BenchmarkDotNet.Artifacts/results/benchmark-results.md >> README.md
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
           git add README.md
