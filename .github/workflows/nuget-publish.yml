@@ -65,13 +65,13 @@ jobs:
         run: dotnet run --project benchmarks/SteamId.Net.Benchmark/SteamId.Net.Benchmark.csproj -c Release -- --filter * --join
         
       - name: Debug Benchmark Files
-        run: ls -R benchmarks/SteamId.Net.Benchmark/bin/Release || echo "No benchmark results found"    
+        run: ls -R benchmarks/SteamId.Net.Benchmark/BenchmarkDotNet.Artifacts/results || echo "No benchmark results found"    
         
       - name: Commit Benchmark Results to README
         run: |
           # Hier wird die generierte Markdown-Datei zu deinem README hinzugefügt
           echo "### Benchmark Results" >> README.md
-          cat bin/Release/net9.0/BenchmarkDotNet.Artifacts/results/benchmark-results.md >> README.md
+          cat benchmarks/SteamId.Net.Benchmark/BenchmarkDotNet.Artifacts/results/benchmark-results.md >> README.md
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
           git add README.md
