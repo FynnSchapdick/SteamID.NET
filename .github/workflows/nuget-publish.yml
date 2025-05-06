@@ -31,7 +31,17 @@ jobs:
         
       - name: Generate Coverage Report
         run: reportgenerator -reports:tests/SteamId.Net.Tests/coverage.info -targetdir:coveragereport -reporttypes:MarkdownSummaryGithub
-
+        
+      - name: Create README.md with coverage
+        run: |
+          echo "# SteamId.Net" > README.md
+          echo "" >> README.md
+          echo "## Code Coverage" >> README.md
+          cat coveragereport/SummaryGithub.md >> README.md
+  
+  
+  
+  
   benchmark:
     name: Run Benchmarks
     runs-on: ubuntu-latest
