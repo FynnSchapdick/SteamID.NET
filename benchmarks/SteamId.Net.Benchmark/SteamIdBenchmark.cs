@@ -3,6 +3,8 @@
 namespace SteamId.Net.Benchmark;
 
 [MemoryDiagnoser]
+[JsonExporterAttribute.Full]
+[JsonExporterAttribute.FullCompressed]
 public class SteamIdBenchmark
 {
     private const string SteamId = "STEAM_0:1:12345678";

@@ -1,3 +1,4 @@
 ﻿using BenchmarkDotNet.Running;
+using SteamId.Net.Benchmark;
 
-BenchmarkSwitcher.FromAssembly(typeof(Program).Assembly).Run(args);
+BenchmarkRunner.Run<SteamIdBenchmark>();

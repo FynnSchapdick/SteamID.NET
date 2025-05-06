@@ -62,7 +62,7 @@ jobs:
         run: dotnet build -c Release
         
       - name: Run Benchmarks
-        run: dotnet run --project benchmarks/SteamId.Net.Benchmark/SteamId.Net.Benchmark.csproj -c Release -- --filter * --join --exporters json      
+        run: dotnet run --project benchmarks/SteamId.Net.Benchmark/SteamId.Net.Benchmark.csproj -c Release -- --filter * --join
         
       - name: Store benchmark result
         uses: rhysd/github-action-benchmark@v1
