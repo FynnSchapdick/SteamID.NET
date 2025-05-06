@@ -17,10 +17,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-dotnet@v3
         with:
-          dotnet-version: '9.x'
-      - uses: ImBIOS/lcov-coverage-badge@v1
-        with:
-          file: .tests/SteamId.Net.Tests/coverage.info
+          dotnet-version: '9.x'     
             
       - name: Restore
         run: dotnet restore
@@ -29,7 +26,11 @@ jobs:
         run: dotnet build --no-restore --configuration Release    
 
       - name: Test and Collect Coverage
-        run: dotnet test tests/SteamId.Net.Tests/SteamId.Net.Tests.csproj --no-build --configuration Release --verbosity normal /p:CollectCoverage=true /p:CoverletOutputFormat=lcov      
+        run: dotnet test tests/SteamId.Net.Tests/SteamId.Net.Tests.csproj --no-build --configuration Release --verbosity normal /p:CollectCoverage=true /p:CoverletOutputFormat=lcov
+        
+      - uses: ImBIOS/lcov-coverage-badge@v1
+        with:
+          file: .tests/SteamId.Net.Tests/coverage.info
   
   benchmark:
     name: Run Benchmarks
