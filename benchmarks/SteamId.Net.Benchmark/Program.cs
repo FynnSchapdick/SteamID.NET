@@ -8,6 +8,7 @@ using SteamId.Net.Benchmark;
 ManualConfig config = ManualConfig.Create(DefaultConfig.Instance)
     .WithSummaryStyle(SummaryStyle.Default)
     .AddLogger(ConsoleLogger.Default)
-    .AddExporter(MarkdownExporter.Default);
+    .AddExporter(MarkdownExporter.GitHub);
 
 BenchmarkRunner.Run<SteamIdBenchmark>(config);
+
