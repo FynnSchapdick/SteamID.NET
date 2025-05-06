@@ -64,6 +64,9 @@ jobs:
       - name: Run Benchmarks
         run: dotnet run --project benchmarks/SteamId.Net.Benchmark/SteamId.Net.Benchmark.csproj -c Release -- --filter * --join
         
+      - name: Debug Benchmark Files
+        run: ls -R bin/Release/net9.0/BenchmarkDotNet.Artifacts/results || echo "No benchmark results found"
+        
       - name: Commit Benchmark Results to README
         run: |
           # Hier wird die generierte Markdown-Datei zu deinem README hinzugefügt
