@@ -5,6 +5,8 @@ on:
   push:
     branches: [ master ]
     tags: [ 'v*' ]
+    paths-ignore:
+      - "**/coverage.svg"
   pull_request:
 
 jobs:
@@ -16,7 +18,10 @@ jobs:
       - uses: actions/setup-dotnet@v3
         with:
           dotnet-version: '9.x'
-          
+      - uses: ImBIOS/lcov-coverage-badge@v1
+        with:
+          file: .tests/SteamId.Net.Tests/coverage.info
+            
       - name: Restore
         run: dotnet restore
       
@@ -24,21 +29,7 @@ jobs:
         run: dotnet build --no-restore --configuration Release    
 
       - name: Test and Collect Coverage
-        run: dotnet test tests/SteamId.Net.Tests/SteamId.Net.Tests.csproj --no-build --configuration Release --verbosity normal /p:CollectCoverage=true /p:CoverletOutputFormat=lcov
-        
-      - name: Install ReportGenerator
-        run: dotnet tool install -g dotnet-reportgenerator-globaltool
-        
-      - name: Generate Coverage Report
-        run: reportgenerator -reports:tests/SteamId.Net.Tests/coverage.info -targetdir:coveragereport -reporttypes:MarkdownSummaryGithub
-        
-      - name: Append coverage to README
-        run: |
-          echo "## Code Coverage" >> README.md
-          cat coveragereport/SummaryGithub.md >> README.md
-  
-  
-  
+        run: dotnet test tests/SteamId.Net.Tests/SteamId.Net.Tests.csproj --no-build --configuration Release --verbosity normal /p:CollectCoverage=true /p:CoverletOutputFormat=lcov      
   
   benchmark:
     name: Run Benchmarks
