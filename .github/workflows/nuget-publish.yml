@@ -30,7 +30,7 @@ jobs:
         
       - uses: ImBIOS/lcov-coverage-badge@v1
         with:
-          file: .tests/SteamId.Net.Tests/coverage.info
+          file: tests/SteamId.Net.Tests/coverage.info
   
   benchmark:
     name: Run Benchmarks
