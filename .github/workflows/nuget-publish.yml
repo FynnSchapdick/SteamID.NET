@@ -31,7 +31,7 @@ jobs:
       - uses: ImBIOS/lcov-coverage-badge@v1
         with:
           file: ./tests/SteamId.Net.Tests/coverage.info
-          access_token: ${{ secrets.COVERAGE_TOKEN }}
+          access_token: ${{ secrets.GIT_TOKEN }}
           style: flat
           icon_name: googlecloud
           icon_color: 'ffffff'
@@ -69,4 +69,4 @@ jobs:
         run: dotnet pack -c Release -p:PackageVersion=${{ env.VERSION }} -o out
 
       - name: Push to NuGet
-        run: dotnet nuget push "out/*.nupkg" --source https://api.nuget.org/v3/index.json --api-key ${{ secrets.NUGET_API_KEY }}
+        run: dotnet nuget push "out/*.nupkg" --source https://api.nuget.org/v3/index.json --api-key ${{ secrets.NUGET_TOKEN }}
