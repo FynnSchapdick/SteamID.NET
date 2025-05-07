@@ -69,7 +69,7 @@ jobs:
         with:
           name: Benchmark.Net Benchmark
           tool: 'benchmarkdotnet'
-          output-file-path: benchmarks/SteamId.Net.Benchmark/BenchmarkDotNet.Artifacts/results/SteamId.Net.Benchmark.SteamIdBenchmark-report-full-compressed.json
+          output-file-path: ./benchmarks/SteamId.Net.Benchmark/BenchmarkDotNet.Artifacts/results/SteamId.Net.Benchmark.SteamIdBenchmark-report-full-compressed.json
           github-token: ${{ secrets.COVERAGE_TOKEN }}
           auto-push: true
           # Show alert with commit comment on detecting possible performance regression
