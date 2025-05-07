@@ -44,4 +44,20 @@ public sealed class SteamIdBaseTests
     {
         Assert.Equal(steamId3, SteamIdBase.Parse(steamId64).ToSteamId3());
     }
+    
+    [Theory]
+    [InlineData("U:1:65601636]")]
+    [InlineData("[U:1:65601636")]
+    [InlineData("[U:1:65:601:636]")]
+    public void Parse_InvalidSteamId3_Throws_ArgumentException(string steamId3)
+    {
+        Assert.Throws<ArgumentException>(() => SteamIdBase.Parse(steamId3));
+    }
+    
+    [Theory]
+    [InlineData("STEAM_1:0:3280:0818")]
+    public void Parse_InvalidSteamId2_Throws_ArgumentException(string steamId2)
+    {
+        Assert.Throws<ArgumentException>(() => SteamIdBase.Parse(steamId2));
+    }
 }

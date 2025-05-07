@@ -5,11 +5,6 @@ public sealed record SteamId2(Universe Universe, AccountType AccountType, int Ac
 {
     public new static SteamIdBase Parse(string steamId)
     {
-        if (!steamId.StartsWith("STEAM_"))
-        {
-            throw new ArgumentException("Invalid Steam ID format");
-        }
-
         string[] parts = steamId.Replace("STEAM_", "").Split(':');
         if (parts.Length is not 3)
         {
