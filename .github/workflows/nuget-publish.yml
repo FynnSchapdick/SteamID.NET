@@ -66,7 +66,7 @@ jobs:
         run: dotnet build -c Release
 
       - name: Pack with tag version
-        run: dotnet pack -c Release -p:PackageVersion=${{ env.VERSION }} -o out
+        run: dotnet pack source/SteamId.Net/SteamId.Net.csproj -c Release -p:PackageVersion=${{ env.VERSION }} -o out
 
       - name: Push to NuGet
         run: dotnet nuget push "out/*.nupkg" --source https://api.nuget.org/v3/index.json --api-key ${{ secrets.NUGET_TOKEN }}
