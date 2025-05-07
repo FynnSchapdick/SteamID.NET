@@ -38,4 +38,9 @@ public abstract record SteamIdBase(Universe Universe, AccountType AccountType, i
     {
         return AccountNumber * 2 + AccountTypes.GetAccountTypeHex(AccountType);
     }
+    
+    public string ToSteamProfileUrl()
+    {
+        return $"https://steamcommunity.com/profiles/{ToSteamId64()}";
+    }
 }
